@@ -16,6 +16,7 @@ server = app.server
 app.scripts.config.serve_locally = False
 app.config.supress_callback_exceptions=True
 
+API_Key=''
 
 colorscale = cl.scales['9']['qual']['Paired']
 
@@ -63,7 +64,7 @@ def update_graph(tickers):
             sdate=sdate.strftime('%Y-%m-%d')
             edate=dt.datetime.now()
             edate=edate.strftime('%Y-%m-%d')
-            df=pd.read_csv('https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '.csv?&api_key=xgnhYnpkFuqTgBDX4bjK&start_date=' + sdate + '&end_date=' + edate + '&order=asc&collapse=daily', parse_dates=['Date'])        
+            df=pd.read_csv('https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '.csv?&api_key=' + API_Key + '&start_date=' + sdate + '&end_date=' + edate + '&order=asc&collapse=daily', parse_dates=['Date'])        
             df.set_index('Date')
 
             #df = DataReader(ticker, 'google',
