@@ -16,6 +16,7 @@ server = app.server
 app.scripts.config.serve_locally = False
 app.config.supress_callback_exceptions=True
 
+#Get api key from Quandl
 API_Key=''
 
 colorscale = cl.scales['9']['qual']['Paired']
